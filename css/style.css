@@ -1,0 +1,39 @@
+.navbar-expand-lg .navbar-nav .nav-link
+{
+    padding: 3px 25px !important;
+}
+.nav-item
+{
+    padding: 5px 10px !important;
+}
+.logo
+{
+    width: 50px;
+    margin-left: 10px;
+}
+
+nav
+{
+    padding: 40px 0px !important;
+}
+.nav-link:focus, .nav-link
+{
+    border-radius: 30px;
+    border: 1px solid transparent !important;
+}
+.nav-link:focus, .nav-link:hover
+{
+    color: #009ad8 !important;
+    border-color: #009ad8 !important;
+}
+
+.navbar
+{
+    background-color: #1e202b !important;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show
+{
+    color: #009ad8 !important;
+    border-color: #009ad8 !important;
+}
