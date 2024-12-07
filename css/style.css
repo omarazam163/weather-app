@@ -8,8 +8,7 @@
 }
 .logo
 {
-    width: 50px;
-    margin-left: 10px;
+    width: 70px;
 }
 
 nav
@@ -36,4 +35,105 @@ nav
 {
     color: #009ad8 !important;
     border-color: #009ad8 !important;
+}
+
+.myinput
+{
+    background-color: #1e202b;
+    width: 100%;
+    padding: 15px 50px 15px 15px;
+    border-radius: 100vh;
+    outline: none;
+    color: #fff;
+    border: none;
+}
+
+.mybtn
+{
+    background-color: #009ad8;
+    padding: 10px 40px;
+    border-radius: 30px;
+    color: #fff;
+    border: 1px solid #009ad8;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-14%,-50%);
+}
+
+.sec1
+{
+    background-image: url(../images/banner.png);
+    background-color: #1e202b;
+    background-repeat: no-repeat;
+}
+
+.mycard-header
+{
+    background-color: #2d303d !important;
+    color: #bfc1c8;
+}
+.mycard-body
+{
+    background-color: #323544;
+}
+
+.gray-text
+{
+    color: #bfc1c8;
+}
+
+.state 
+{
+    width: 90px;
+}
+
+.temp 
+{
+    font-size: 90px;
+}
+.blue-text
+{
+    color: #009ad8;
+    font-size: 14px;
+}
+
+.mycard-header2
+{
+    background-color: #222530 !important;
+    color: #bfc1c8;
+}
+
+.mycard-body2
+{
+    background-color: #262936;
+}
+
+footer
+{
+    background-color: #262936;
+}
+
+.social
+{
+    background-color: #1e202b;
+    border-radius: 100vh;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s;
+}
+.social a i
+{
+    color: #009ad8;
+    transition:all 0.3s;
+}
+
+.social:hover
+{
+    background-color: #009ad8;
+}
+.social:hover a i
+{
+    color: #fff;
 }

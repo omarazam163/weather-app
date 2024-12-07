@@ -6,16 +6,20 @@
     <title>Weather</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <nav class="navbar bg-dark border-bottom border-body navbar-dark navbar-expand-lg">
-      <div class="container px-5">
-        <a class="navbar-brand d-flex justify-content-center align-items-center" href="#">
-            <img src="./images/logo@2x.png" alt="logo" class="logo me-3">
-            <div class="d-flex flex-column">
-                <div>Weather</div>
-                <div style="font-size: 13px;color: #bfc1c8;">Forecast</div>
-            </div>
+    <nav class="navbar bg-dark navbar-dark navbar-expand-lg">
+      <div class="container px-lg-5">
+        <a
+          class="navbar-brand d-flex justify-content-center align-items-center"
+          href="#"
+        >
+          <img src="./images/logo@2x.png" alt="logo" class="logo me-3" />
+          <div class="d-flex flex-column">
+            <div>Weather</div>
+            <div style="font-size: 13px; color: #bfc1c8">Forecast</div>
+          </div>
         </a>
         <button
           class="navbar-toggler"
@@ -29,9 +33,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 mt-3 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="#"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">News</a>
@@ -49,6 +55,132 @@
         </div>
       </div>
     </nav>
+    <section class="sec1">
+      <div class="pt-5 container m-auto px-xl-5">
+        <div class="search py-4">
+          <div class="container position-relative">
+            <input
+              type="text"
+              placeholder="Search for a city..."
+              class="myinput"
+              id="search"
+            />
+            <button class="mybtn" id="find">Find</button>
+          </div>
+        </div>
+        <div class="py-5">
+        <div class="row g-0 align-items-stretch rounded-2 overflow-hidden" >
+          <div class="col-lg-4" >
+            <div class="mycard" id="current-card">
+              <div class="mycard-header d-flex justify-content-between p-2">
+                <p class="m-0" id="current-card-day">Friday</p>
+                <p class="m-0" id="current-card-date">6December</p>
+              </div>
+              <div class="mycard-body p-4">
+                <div class="gray-text fs-5 pt-2" id="current-card-city">cairo</div>
+                <div class="temp">
+                  <div class="text-white fw-bold d-inline-block" id="current-card-temp"><span>18.3</span>°C</div>
+                  <img src="./images/116.png" class="state" id="current-card-state" />
+                </div>
+                <p class="blue-text" id="current-card-w-state">Mist</p>
+                <div class="d-flex gap-3">
+                  <div>
+                    <img src="./images/icon-umberella.png" />
+                    <span class="gray-text">20%</span>
+                  </div>
+                  <div>
+                    <img src="./images/icon-wind.png" />
+                    <span class="gray-text" id="current-card-wind">18km/h</span>
+                  </div>
+                  <div>
+                    <img src="./images/icon-compass.png" />
+                    <span class="gray-text" id="current-card-wind-direction">South</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex flex-column">
+            <div class="mycard-header2 p-2">
+              <p class="m-0 text-center" id="second-card-day">Friday</p>
+            </div>
+            <div
+              class="mycard-body2 flex-grow-1 d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="d-flex justify-content-between flex-column align-items-center p-3 pt-5"
+              >
+                <img src="./images/113.png" id="second-card-state" />
+                <p class="text-white fs-3 fw-bold m-0"><span id="second-card-temp-max">18.3</span>°C</p>
+                <p class="gray-text"><span id="second-card-temp-min">14</span>°</p>
+                <p class="blue-text" id="second-card-w-state">Mist</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex flex-column">
+            <div class="mycard-header p-2">
+              <p class="m-0 text-center" id="third-card-day">Friday</p>
+            </div>
+            <div
+              class="mycard-body flex-grow-1 d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="d-flex justify-content-between flex-column align-items-center p-3 pt-5"
+              >
+                <img src="./images/113.png" id="third-card-state" />
+                <p class="text-white fs-3 fw-bold m-0"><span id="third-card-temp-max">18.3</span>°C</p>
+                <p class="gray-text"><span id="third-card-temp-min">14</span>°</p>
+                <p class="blue-text" id="third-card-w-state">Mist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="search py-4 col-lg-7 col-sm">
+            <div class="container position-relative">
+              <input
+                type="text"
+                placeholder="enter your email to subscribe..."
+                class="myinput"
+              />
+              <button class="mybtn" style="padding: 10px 30px;">Subscribe</button>
+            </div>
+          </div>
+          <div class="col-lg-5 d-flex justify-content-lg-center gap-2 mb-2">
+            <div
+              class="d-flex justify-content-center align-items-center social"
+            >
+              <a>
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </div>
+          <div class="d-flex justify-content-center align-items-center social">
+              <a>
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+            <div class ="d-flex justify-content-center align-items-center social">
+              <a>
+                <i class="fa-brands fa-google-plus-g"></i>
+              </a>
+            </div>
+                      <div
+              class="d-flex justify-content-center align-items-center social"
+            >
+              <a>
+                <i class="fa-brands fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+         <p class="gray-text m-0  pb-5" style="font-size: 14px;">Copyright 2014 Company name. Designed by Azzam. All rights reserved</p>
+      </div>
+    </footer>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/app.js"></script>
   </body>
