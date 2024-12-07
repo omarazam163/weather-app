@@ -148,9 +148,7 @@ async function dispalyData(search)
 }
 
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  getCurrentLocation();
-});
+getCurrentLocation();
 
 btn.addEventListener("click", (e) => {
   city = search.value;
