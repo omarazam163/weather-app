@@ -90,7 +90,7 @@ async function getWeather(search) {
     }
   );
   const data = await res.json();
-  if (data) {
+  if (data&&res.status===200) {
     //first card
     const firstCardObj = {
       location: data.location.name,
