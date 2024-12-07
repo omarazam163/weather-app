@@ -80,6 +80,10 @@ const months = [
 ];
 
 async function getWeather(search) {
+  if(search === undefined)
+  {
+    search='cairo'
+  }
   let res = await fetch(
     `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${search}&days=3`,
     {
@@ -130,6 +134,8 @@ async function getWeather(search) {
 async function dispalyData(search)
 {
   const data = await getWeather(search);
+  if(data)
+  {
     //first card
     currentCardDay.innerHTML = data.firstCardObj.DayName;
     currentCardDate.innerHTML = data.firstCardObj.date;
@@ -153,6 +159,11 @@ async function dispalyData(search)
     thirdCardTempMin.innerHTML = data.thirdCardobj.minTemp;
     thirdCardState.attributes["src"].value = data.thirdCardobj.stateIcon;
     thirdCardWState.innerHTML = data.thirdCardobj.stateText;
+  }
+  else
+  {
+    setAllFieldsToLoading();
+  }
 }
 
 
