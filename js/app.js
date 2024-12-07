@@ -42,8 +42,15 @@ function getCurrentLocation() {
         `https://us1.locationiq.com/v1/reverse?key=pk.2af3dacd9dd26ff3be69b64431d2a023&lat=${latitude}&lon=${longitude}&format=json&`
       );
       const data = await response.json();
+      if (data.address.city!== undefined) 
+      {
       dispalyData(data.address.city);
       city = data.address.city;
+      }
+      else
+      {
+        dispalyData(data.address.country);
+      }
     }
     catch
     {
