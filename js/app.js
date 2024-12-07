@@ -32,6 +32,7 @@ const thirdCardWState = document.getElementById("third-card-w-state");
 
 let city ='cairo';
 function getCurrentLocation() {
+   setAllFieldsToLoading();
    navigator.geolocation.getCurrentPosition(
     async (pos) => {
       const { latitude, longitude } = pos.coords;
@@ -161,3 +162,31 @@ btn.addEventListener("click", (e) => {
   dispalyData(city);
   }
 });
+
+function setAllFieldsToLoading() {
+  const loadingText = "Loading...";
+
+  // First card
+  currentCardDay.innerHTML = loadingText;
+  currentCardDate.innerHTML = loadingText;
+  currentCardTemp.children[0].innerHTML = loadingText;
+  currentCardState.attributes["src"].value = ""; 
+  currentCardCity.innerHTML = loadingText;
+  currentCardWState.innerHTML = loadingText;
+  currentCardWind.innerHTML = loadingText;
+  currentCardWindDirection.innerHTML = loadingText;
+
+  // Second card
+  secondCardDay.innerHTML = loadingText;
+  secondCardTempMax.innerHTML = loadingText;
+  secondCardTempMin.innerHTML = loadingText;
+  secondCardState.attributes["src"].value = ""; 
+  secondCardWState.innerHTML = loadingText;
+
+  // Third card
+  thirdCardDay.innerHTML = loadingText;
+  thirdCardTempMax.innerHTML = loadingText;
+  thirdCardTempMin.innerHTML = loadingText;
+  thirdCardState.attributes["src"].value = ""; 
+  thirdCardWState.innerHTML = loadingText;
+}
