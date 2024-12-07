@@ -35,6 +35,7 @@ function getCurrentLocation() {
    setAllFieldsToLoading();
    navigator.geolocation.getCurrentPosition(
     async (pos) => {
+      try{
       const { latitude, longitude } = pos.coords;
       const apiKey = "pk.2af3dacd9dd26ff3be69b64431d2a023";
       const response = await fetch(
@@ -42,6 +43,12 @@ function getCurrentLocation() {
       );
       const data = await response.json();
       dispalyData(data.address.city);
+      city = data.address.city;
+    }
+    catch
+    {
+      dispalyData(city);
+    }
     },
     (error) => {
       console.error("Error getting location:", error.message);
