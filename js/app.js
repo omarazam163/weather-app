@@ -31,7 +31,6 @@ const thirdCardState = document.getElementById("third-card-state");
 const thirdCardWState = document.getElementById("third-card-w-state");
 
 let city ='cairo';
-
 function getCurrentLocation() {
    navigator.geolocation.getCurrentPosition(
     async (pos) => {
@@ -130,7 +129,7 @@ async function dispalyData(search)
     currentCardState.attributes["src"].value = data.firstCardObj.stateIcon;
     currentCardCity.innerHTML = data.firstCardObj.location;
     currentCardWState.innerHTML = data.firstCardObj.stateText;
-    currentCardWind.innerHTML = data.firstCardObj.wind;
+    currentCardWind.innerHTML = data.firstCardObj.wind+"km/h";
     currentCardWindDirection.innerHTML = data.firstCardObj.windDirection;
 
     //second card
