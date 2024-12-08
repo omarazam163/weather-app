@@ -32,6 +32,7 @@ const thirdCardWState = document.getElementById("third-card-w-state");
 
 let city ='cairo';
 async function getCurrentLocation() {
+      setAllFieldsToLoading();
       let apikey ='57e68026862b4a5f9748969d8c750e3a';
       let res = await fetch(
         `https://api.ipgeolocation.io/ipgeo?apiKey=${apikey}&fields=geo`);
@@ -197,22 +198,4 @@ function setAllFieldsToLoading() {
   thirdCardTempMin.innerHTML = loadingText;
   thirdCardState.attributes["src"].value = ""; 
   thirdCardWState.innerHTML = loadingText;
-}
-
-
-async function getIpInfo() {
-  // Set endpoint and your access key
-  const ip = "67.250.186.196";
-  const accessKey = "YOUR_ACCESS_KEY";
-  const url =
-    "https://apiip.net/api/check?ip=" + ip + "&accessKey=" + accessKey;
-
-  // Make a request and store the response
-  const response = await fetch(url);
-
-  // Decode JSON response:
-  const result = await response.json();
-
-  // Output the "code" value inside "currency" object
-  console.log(result.currency.code);
 }
