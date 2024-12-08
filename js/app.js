@@ -58,7 +58,7 @@ function getCurrentLocation() {
     }
     },
     (error) => {
-      console.error("Error getting location:", error.message);
+      dispalyData(city);
     }
   );
 }
@@ -106,7 +106,7 @@ async function getWeather(search) {
     const firstCardObj = {
       location: data.location.name,
       DayName: daysOfWeek[new Date(data.current.last_updated).getDay()],
-      date: `${new Date(data.current.last_updated).getDay()+1} ${
+      date: `${new Date(data.current.last_updated).getDate()} ${
         months[new Date(data.current.last_updated).getMonth()]
       }`,
       temp: data.current.temp_c,
