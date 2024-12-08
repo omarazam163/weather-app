@@ -151,10 +151,6 @@ async function dispalyData(search)
     thirdCardState.attributes["src"].value = data.thirdCardobj.stateIcon;
     thirdCardWState.innerHTML = data.thirdCardobj.stateText;
   }
-  else
-  {
-    setAllFieldsToLoading();
-  }
 }
 
 
