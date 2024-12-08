@@ -31,36 +31,17 @@ const thirdCardState = document.getElementById("third-card-state");
 const thirdCardWState = document.getElementById("third-card-w-state");
 
 let city ='cairo';
-function getCurrentLocation() {
-   setAllFieldsToLoading();
-   navigator.geolocation.getCurrentPosition(
-    async (pos) => {
-      try{
-      const { latitude, longitude } = pos.coords;
-      const apiKey = "pk.2af3dacd9dd26ff3be69b64431d2a023";
-      const response = await fetch(
-        `https://us1.locationiq.com/v1/reverse?key=pk.2af3dacd9dd26ff3be69b64431d2a023&lat=${latitude}&lon=${longitude}&format=json&`
-      );
-      const data = await response.json();
-      if (data.address.city!== undefined) 
+async function getCurrentLocation() {
+      let res = await fetch("http://ip-api.com/json/?fields=61439");
+      let data = await res.json();
+      if(data.city!==undefined)
       {
-      dispalyData(data.address.city);
-      city = data.address.city;
+      dispalyData(data.city);
       }
       else
       {
-        dispalyData(data.address.country);
+        dispalyData(data.country);
       }
-    }
-    catch
-    {
-      dispalyData(city);
-    }
-    },
-    (error) => {
-      dispalyData(city);
-    }
-  );
 }
 const daysOfWeek = [
   "Sunday",
@@ -214,4 +195,22 @@ function setAllFieldsToLoading() {
   thirdCardTempMin.innerHTML = loadingText;
   thirdCardState.attributes["src"].value = ""; 
   thirdCardWState.innerHTML = loadingText;
+}
+
+
+async function getIpInfo() {
+  // Set endpoint and your access key
+  const ip = "67.250.186.196";
+  const accessKey = "YOUR_ACCESS_KEY";
+  const url =
+    "https://apiip.net/api/check?ip=" + ip + "&accessKey=" + accessKey;
+
+  // Make a request and store the response
+  const response = await fetch(url);
+
+  // Decode JSON response:
+  const result = await response.json();
+
+  // Output the "code" value inside "currency" object
+  console.log(result.currency.code);
 }
