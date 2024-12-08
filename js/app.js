@@ -32,7 +32,9 @@ const thirdCardWState = document.getElementById("third-card-w-state");
 
 let city ='cairo';
 async function getCurrentLocation() {
-      let res = await fetch("http://ip-api.com/json/?fields=61439");
+      let apikey ='57e68026862b4a5f9748969d8c750e3a';
+      let res = await fetch(
+        `https://api.ipgeolocation.io/ipgeo?apiKey=${apikey}&fields=geo`);
       let data = await res.json();
       if(data.city!==undefined)
       {
@@ -40,7 +42,7 @@ async function getCurrentLocation() {
       }
       else
       {
-        dispalyData(data.country);
+        dispalyData(data.country_name);
       }
 }
 const daysOfWeek = [
